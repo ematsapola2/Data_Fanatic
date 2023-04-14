@@ -1,0 +1,78 @@
+select *
+FROM [SQLTutorials2].[dbo].[Order_Details]
+
+** the data consists of order details about each customer. The data uses CustomerID, productID and name to identify each customer by
+their unique customerID. Each product has a product ID, where we can identify how many of this products were bought by the customer. 
+to identify which of our products customers like to buy.
+
+SELECT *
+FROM [SQLTutorials2].[dbo].[Order_Details] 
+
+SELECT *
+FROM [SQLTutorials2].[dbo].[Order_Details] 
+WHERE price  >= 20
+
+SELECT count (distinct price)
+FROM [SQLTutorials2].[dbo].[Order_Details] 
+where price >= 21
+
+SELECT *
+FROM [SQLTutorials2].[dbo].[Order_Details]
+WHERE ProductName IN ('TV', 'Fridge');
+
+SELECT *
+FROM [SQLTutorials2].[dbo].[Order_Details]
+WHERE productName = 'Sofa' OR productName = 'TV'
+
+SELECT productName, price
+FROM [SQLTutorials2].[dbo].[Order_Details]
+WHERE productName = 'Sofa' OR price >=20
+
+SELECT *
+FROM [SQLTutorials2].[dbo].[Order_Details]
+WHERE price BETWEEN 20 AND 50
+
+SELECT *
+FROM [SQLTutorials2].[dbo].[Order_Details]
+WHERE price BETWEEN 20 AND 50 AND productName IN ('Sofa', 'TV');
+
+SELECT *
+FROM [SQLTutorials2].[dbo].[Order_Details]
+WHERE ProductName LIKE 'S%'
+
+
+SELECT *
+FROM [SQLTutorials2].[dbo].[Order_Details]
+WHERE ProductName LIKE '%S'
+
+SELECT *
+FROM [SQLTutorials2].[dbo].[Order_Details]
+WHERE ProductName LIKE '%S%'
+
+
+SELECT *
+FROM [SQLTutorials2].[dbo].[Order_Details]
+WHERE ProductName LIKE '%A_S%'
+
+
+--** Performing aggregate functions
+
+SELECT AVG(price) AS AVG_Price
+FROM [SQLTutorials2].[dbo].[Order_Details]
+
+
+SELECT SUM(price) AS SUM_Price
+FROM [SQLTutorials2].[dbo].[Order_Details]
+
+
+SELECT Price
+FROM [SQLTutorials2].[dbo].[Order_Details]
+WHERE price <> 20
+
+
+SELECT Min(price) AS Min_price
+FROM [SQLTutorials2].[dbo].[Order_Details]
+
+
+SELECT Max(price) AS Max_Price
+FROM [SQLTutorials2].[dbo].[Order_Details]
